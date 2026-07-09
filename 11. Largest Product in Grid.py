@@ -29,13 +29,13 @@ def largest_product_in_grid(n):
     maximum = 0
     for row in range(n_row):
         for col in range(n_col):
-            if col <= (n_col-4):
+            if col <= (n_col-4): #right travarse
                 maximum = max(maximum,  math.prod(grid[row][col:col+4]))
-            if row <= (n_row-4):
+            if row <= (n_row-4): # down travarse
                 maximum = max(maximum, (grid[row][col] * grid[row+1][col] * grid[row+2][col] * grid[row+3][col]))
-            if col <= (n_col-4) and row <= (n_row-4):
+            if col <= (n_col-4) and row <= (n_row-4): #right diagonal
                 maximum = max(maximum,(grid[row][col]*grid[row+1][col+1] * grid[row+2][col+2]* grid[row+3][col+3]))
-            if col >= 3 and row <= (n_row-4):
+            if col >= 3 and row <= (n_row-4):   #left diagonal
                 maximum = max(maximum,(grid[row][col] * grid[row+1][col-1] * grid[row+2][col-2] * grid[row+3][col-3]))
     return maximum
 
