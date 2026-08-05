@@ -25,9 +25,8 @@ def number_letters_count(limit):
             words += ones[num//100] + " hundred"
             if num%100 != 0:
                 words += " and " + below_one_hundred(num%100)
-                return words
-            else:
-                return words
+            return words
+        
         if num == 1000:
                 return "one thousand"
             
